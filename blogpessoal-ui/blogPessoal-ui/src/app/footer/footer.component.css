@@ -3,28 +3,35 @@
 ul.social-network {
     list-style: none;
     display: inline;
-  
+    
     padding: 0;
   }
   
   ul.social-network li {
     display: inline;
     margin: 0;
-    padding: 5px;
+    padding: 30px;
+    
   }
   
-  .faFacebook, .faLinkedin, .faInstagram{
-      color: white;
+  .social-network img {
+    width: 50px;
+    height: 50px;
+    
   }
   
-  .faFacebook:hover{
-    color: #3b5998;
+
+  footer {
+    background-color: white !important;
+    
   }
-  
-  .faLinkedin:hover{
-  color: #0072b1;
+
+  footer h4 {
+    color: black !important;
   }
-  
-  .faInstagram:hover{
-  color: #C13584;
+
+  footer {
+    background: url("https://i.ibb.co/bQZ5f5P/undraw-contact-us-15o2-3.png");
   }
+
+ 
