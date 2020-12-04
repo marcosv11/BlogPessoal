@@ -1,6 +1,12 @@
 
-.texto {
+.menu {
     letter-spacing: 2.rem;
     font-size: 16pt;
+    
+}
+
+.menu {
+    border-bottom: 1.5px solid black ;
+    margin-bottom: 60px;
 }
 
