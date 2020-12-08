@@ -10,32 +10,40 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastroComponent implements OnInit {
 
-  user: User = new User()
-  senha: string
+  user: User = new User();
+  senha: string;
 
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
-  conferirSenha(event: any) {
+  conferirSenha(event: any){
     this.senha = event.target.value
+
   }
+
+
 
   cadastrar() {
-    if (this.senha === this.user.senha){
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
-        this.user = resp
-        this.router.navigate(['/login'])
-        alert('Usuário cadastrado com sucesso')
-      })
-    } else {
-      alert ('Suas senhas não são iguais')
-    }
+        if ( this.senha === this.user.senha ) {
+          this.authService.cadastrar(this.user).subscribe((resp: User) => {
+            this.user = resp
+            this.router.navigate(['/login'])
+            alert('Usuário cadastrado com sucesso!')
+          }, err => {
+            console.log(`Erro cod: ${err.status}`)
+            if (err.status==400) {
+              alert("usuario ja cadastrado")
+            }
+          })
+        } else {
+          alert('Suas senhas não conferem')
+        }
+      }
     
-  }
 
 }
